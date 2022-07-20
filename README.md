@@ -21,13 +21,33 @@ fr3d-python reader.py reads the following attributes (biopython pdb equivalents 
 - entities ()
 - chemp comp () 
 
+("1abc", 0, "A", ("", 10, "A"))
+This corresponds to:
+
+The Structure with id "1abc"
+The Model with id 0
+The Chain with id "A"
+The Residue with id ("", 10, "A")
+
+## Residues
+- Full ids can be gathered at the Residue level using ``` residue.get_full_id(). These attributes include Structure, Model, Chain, Residue("Hetero, Water, Other" ,"sequence id","insertion code").
 
 ## Atoms
+The following attributes for atom objects in fr3d-python correspond to the following in BioPython
 - fred-python| BioPython
-- x,y,z | atom.coord[0], atom.coord[1], atom.coord[2]:
-- model | residue.get_full_id()[1]
-
-
+- x,y,z | atom.coord[0], atom.coord[1], atom.coord[2]
+- model | ```residue.get_full_id()[1]```
+- chain | ```residue.get_full_id()[2]```
+- component_id | ```residue.get_resname()```
+- component_number | 
+- component_index |
+- insertion_code | ```residue.get_full_id()```
+- alt_id | ```atom.get_altloc()```
+- group | 
+- type | 
+- name | ```atom.get_name()```
+- symmetry | 
+- polymeric | 
 
 fr3d-python reader.py makes cif object of all features, which includes atom objects (Atom defined in fr3d/data/atoms.py) and 
 [PDB and mmCIF corresponding tags](https://mmcif.wwpdb.org/docs/pdb_to_pdbx_correspondences.html) 
