@@ -39,8 +39,8 @@ The following attributes for atom objects in fr3d-python correspond to the follo
 - model | ```residue.get_full_id()[1]```
 - chain | ```residue.get_full_id()[2]```
 - component_id | ```residue.get_resname()```
-- component_number | 
-- component_index |
+- component_number | ```residue.get_full_id()[3][1]```
+- component_index | 
 - insertion_code | ```residue.get_full_id()```
 - alt_id | ```atom.get_altloc()```
 - group | 
